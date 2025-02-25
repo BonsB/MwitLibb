@@ -1,0 +1,43 @@
+const GOOGLE_SHEET_ID = "1kITZi1YZEqpMm0IVj-6BC56NbEfkH_r8XcGqrLjyOHY";
+const RANGE = "SUM!A224:Q224"; // Modify as needed
+const URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&range=${RANGE}`;
+
+export default function GoogleSheetData() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(URL)
+      .then((response) => response.text()) // Fetch as text
+      .then((csv) => {
+        const rows = csv.split("\n").map(row => row.split(",")); // Parse CSV into an array
+        setData(rows);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Google Sheets Data</h1>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {data.map((row, index) => (
+            <Card key={index}>
+              <CardContent className="p-4">
+                {row.map((cell, idx) => (
+                  <p key={idx} className="text-sm">{cell}</p>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

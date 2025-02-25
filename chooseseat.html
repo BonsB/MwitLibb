@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Seat</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <h2>Choose Your Seat</h2>
+
+    <div class="container">
+        <div class="seat" onclick="selectSeat(1)">
+            <span class="number">1</span>
+            <img src="image/1.png" alt="Single Person">
+            <p>ไม่มีเธอไม่ตาย</p>
+        </div>
+        <div class="seat" onclick="selectSeat(2)">
+            <span class="number">2</span>
+            <img src="image/2.png" alt="Group of Three">
+            <p>ฝึกเข้าสังคม</p>
+        </div>
+        <div class="seat" onclick="selectSeat(3)">
+            <span class="number">3</span>
+            <img src="image/3.png" alt="Large Group">
+            <p>ห้อง Co ก็เหมือนความรักเพราะกลม</p>
+        </div>
+    </div>
+
+    <!-- Home Button (Bottom Left Corner) -->
+    <a href="index.html" class="home-button" title="Go Home">
+        🏠
+    </a>
+
+    <script>
+        function selectSeat(seat) {
+            window.location.href = "seat.html"
+            // Add redirection or further logic here
+        }
+    </script>
+
+</body>
+</html>

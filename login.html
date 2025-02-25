@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <body style="background: url('image/หน้าล้อคอินเข้าใจเธอ\ \(1\).png') no-repeat center center fixed; background-size:cover;"></body>
+    <div class="container">
+        <div class="form-box">
+            <h2 id="formTitle">Login</h2>
+            <p id="formSubtitle">Sign in to continue</p>
+            
+            <!-- LOGIN FORM -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="loginUsername" placeholder="รหัสประจำตัว" required>
+                </div>
+                <div class="input-group password-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <span class="togglePassword">👁</span>
+                </div>
+                <button type="submit">Login</button>
+                <p id="loginMessage"></p>
+            </form>
+
+            <!-- SIGNUP FORM (Hidden by default) -->
+            <form id="signupForm" class="hidden">
+                <div class="input-group">
+                    <input type="text" id="signupUsername" placeholder="รหัสประจำตัว" required>
+                </div>
+                <div class="input-group password-group">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                    <span class="togglePassword">👁</span>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p id="signupMessage"></p>
+            </form>
+
+            <!-- TOGGLE LINK -->
+            <p class="switch-form">
+                Don't have an account? <a href="#" id="toggleForm">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <a href="index.html" class="home-button" title="Go Home">
+        🏠
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        /* Background Styling */
+        body {
+            background: url('image/หน้าล้อคอินเข้าใจเธอ (1).png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Confirmation Box */
+        .confirmation-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            animation: fadeIn 0.5s ease-in-out;
+            width: 380px;
+        }
+
+        /* Main Title */
+        .confirmation-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Checkmark Emoji */
+        .confirmation-title::before {
+            content: "✔ ";
+            font-size: 32px;
+            margin-right: 10px;
+        }
+
+        /* Subtitle */
+        .confirmation-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        /* Red Warning Message */
+        .warning {
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        /* Bigger Button */
+        .confirm-btn {
+            background: green;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .confirm-btn:hover {
+            background: darkgreen;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="confirmation-container">
+        <div class="confirmation-title">เสร็จสิ้น</div>
+        <div class="confirmation-text">กรุณามาภายใน 5 นาที</div>
+        <div class="warning">หากไม่มาภายในเวลาที่กำหนด ระบบจะยกเลิกการจอง</div>
+        <button class="confirm-btn" onclick="redirectToNextPage()">ยืนยัน</button>
+    </div>
+
+    <script>
+        function redirectToNextPage() {
+            window.location.href = "seat2.html"; // Change this to your actual next page URL
+        }
+
+        // Auto-redirect to seat.html after 5 seconds
+        setTimeout(function() {
+            window.location.href = "seat2.html";
+        }, 5000);
+    </script>
+
+</body>
+</html>

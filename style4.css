@@ -1,0 +1,140 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(to bottom, #4A6984, #1F4B72);
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+}
+
+h2 {
+    font-style: italic;
+    color: yellow;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Floor Plan */
+.floor-plan {
+    width: 850px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Row (11 Seats) */
+.seat-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 8px;
+}
+
+/* Right Column (4 Seats with Equal Gaps) */
+.side-seats {
+    position: absolute;
+    right: 15px;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spreads them evenly to the bottom */
+    height: 340px; /* Adjusts to full height */
+}
+
+/* Seats */
+.seat {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: green;
+    border: 1px solid black;
+}
+
+.seat:hover {
+    transform: scale(1.08);
+}
+
+/* Work Areas */
+.work-area {
+    background: lightgray;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.library {
+    position: absolute;
+    left: 15px;
+    top: 100px;
+    width: 140px;
+    height: 90px;
+}
+
+.coworking {
+    position: absolute;
+    bottom: 45px;
+    width: 280px;
+    height: 100px;
+}
+
+/* Tables */
+.tables {
+    position: absolute;
+    left: 50%;
+    top: 180px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.table {
+    width: 60px;
+    height: 40px;
+    background: gray;
+}
+
+/* Staircase */
+.stairs {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    background: black;
+    clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+}
+
+/* Home Button */
+.home-button {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-size: 30px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.home-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.08);
+}
