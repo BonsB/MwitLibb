@@ -7,6 +7,18 @@
     font-family: 'Sarabun';
 }
 
+body {
+    background: url('background.png') center/cover no-repeat fixed;
+    height: 100vh;  /* Makes sure the body covers the full screen */
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 header {
     position: fixed;
